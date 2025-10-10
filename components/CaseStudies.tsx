@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function CaseStudies() {
   const projects = [
     {
@@ -39,9 +43,21 @@ export default function CaseStudies() {
   ];
 
   return (
-    <section id="projects" className="py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-20">
+    <section id="projects" className="py-32 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-0 w-1/4 h-96 bg-navy-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-0 w-1/3 h-96 bg-navy-100/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-sm text-navy-600 uppercase tracking-widest mb-6 font-medium">
             How we work
           </h2>
@@ -51,13 +67,18 @@ export default function CaseStudies() {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
             Explore our portfolio of successful campaigns that transformed brands into industry leaders
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-2xl bg-gray-200 aspect-[4/3] cursor-pointer hover:shadow-xl transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.03, y: -5 }}
+              className="group relative overflow-hidden rounded-2xl bg-gray-200 aspect-[4/3] cursor-pointer shadow-lg hover:shadow-2xl transition-all"
             >
               {/* Image Placeholder */}
               <div className="absolute inset-0">
@@ -80,14 +101,8 @@ export default function CaseStudies() {
                   <p className="text-base text-navy-200">{project.client}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
-        <div className="text-center mt-16">
-          <button className="bg-navy-600 text-white px-8 py-4 rounded-lg text-base font-medium hover:bg-navy-700 transition-all">
-            View all projects
-          </button>
         </div>
       </div>
     </section>

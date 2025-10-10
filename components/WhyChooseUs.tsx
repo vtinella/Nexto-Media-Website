@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function WhyChooseUs() {
   const reasons = [
     {
@@ -15,10 +19,20 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="about" className="py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="about" className="py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-navy-100/40 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-sm text-navy-600 uppercase tracking-widest mb-6 font-medium">
               Why choose us
             </h2>
@@ -30,18 +44,31 @@ export default function WhyChooseUs() {
             </p>
             <div className="space-y-8">
               {reasons.map((reason, index) => (
-                <div key={index} className="border-l-2 border-navy-600 pl-6">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="border-l-2 border-navy-600 pl-6 hover:border-navy-800 transition-colors"
+                >
                   <h3 className="text-xl font-semibold text-gray-950 mb-2">
                     {reason.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     {reason.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
-          <div className="relative">
+          </motion.div>
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Team/Office Image */}
             <div className="aspect-square rounded-3xl overflow-hidden relative">
               {/* Replace with actual team photo */}
@@ -68,7 +95,7 @@ export default function WhyChooseUs() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

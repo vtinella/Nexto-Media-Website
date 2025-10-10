@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Services() {
   const services = [
     {
@@ -19,30 +23,47 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-20">
+    <section className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-navy-50/50 to-transparent pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-sm text-navy-600 uppercase tracking-widest mb-6 font-medium">
             The toolkit
           </h2>
           <p className="text-4xl md:text-5xl font-bold text-gray-950 mb-6 leading-tight">
             What we offer
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group p-10 rounded-2xl bg-gray-50 hover:bg-navy-50 transition-all border border-transparent hover:border-navy-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="group p-10 rounded-2xl bg-white hover:bg-navy-50 transition-all border border-gray-200 hover:border-navy-300 shadow-sm hover:shadow-xl"
             >
+              <div className="w-12 h-12 rounded-lg bg-navy-100 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
+                <div className="w-6 h-6 bg-navy-600 group-hover:bg-white rounded transition-colors" />
+              </div>
               <h3 className="text-2xl font-semibold text-gray-950 mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

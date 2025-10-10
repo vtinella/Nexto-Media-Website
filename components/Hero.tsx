@@ -58,6 +58,49 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Floating animated orbs */}
+      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-navy-500/20 rounded-full blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute top-1/3 right-1/4 w-96 h-96 bg-navy-400/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 80, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-navy-600/15 rounded-full blur-3xl"
+          animate={{
+            x: [0, 60, 0],
+            y: [0, -60, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
       <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 py-32">
         <div className="text-center max-w-5xl mx-auto">
           <motion.h1
@@ -87,18 +130,22 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link
-              href="#projects"
-              className="bg-navy-600 text-white px-8 py-4 rounded-lg text-base font-medium hover:bg-navy-700 transition-all"
-            >
-              View our work
-            </Link>
-            <Link
-              href="#contact"
-              className="border border-gray-300 text-white px-8 py-4 rounded-lg text-base font-medium hover:border-navy-600 hover:bg-navy-600/20 transition-all"
-            >
-              Let's talk
-            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="#projects"
+                className="block bg-navy-600 text-white px-8 py-4 rounded-lg text-base font-medium hover:bg-navy-700 transition-all shadow-lg hover:shadow-xl"
+              >
+                View our work
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="#contact"
+                className="block border border-gray-300 text-white px-8 py-4 rounded-lg text-base font-medium hover:border-navy-600 hover:bg-navy-600/20 transition-all"
+              >
+                Let's talk
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -1,11 +1,48 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <footer className="bg-gradient-to-b from-gray-950 to-navy-950 py-16 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-24 -left-24 w-96 h-96 bg-navy-600/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-24 -right-24 w-96 h-96 bg-navy-400/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, -50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
+          <motion.div
+            className="md:col-span-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h3 className="text-xl font-semibold mb-4 text-white">Nexto Media</h3>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
               Creating industry leaders on social media through strategic marketing, creative content, and video production.
@@ -32,9 +69,14 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <h4 className="text-sm font-semibold mb-4 text-white uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-3">
               <li>
@@ -43,24 +85,29 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#projects" className="text-gray-600 hover:text-gray-950 transition-colors text-sm">
+                <Link href="#projects" className="text-gray-400 hover:text-navy-400 transition-colors text-sm">
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="text-gray-600 hover:text-gray-950 transition-colors text-sm">
+                <Link href="#about" className="text-gray-400 hover:text-navy-400 transition-colors text-sm">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-gray-600 hover:text-gray-950 transition-colors text-sm">
+                <Link href="#contact" className="text-gray-400 hover:text-navy-400 transition-colors text-sm">
                   Contact
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h4 className="text-sm font-semibold mb-4 text-white uppercase tracking-wider">Contact Info</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>hello@nextomedia.com</li>
@@ -68,7 +115,7 @@ export default function Footer() {
               <li>Martin Linges vei 25</li>
               <li>1364 Fornebu, Norway</li>
             </ul>
-          </div>
+          </motion.div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">

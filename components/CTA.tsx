@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function CTA() {
   const [formData, setFormData] = useState({
@@ -15,6 +15,11 @@ export default function CTA() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Scroll-based animations
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0.8]);
 
   const services = [
     'Social Media Strategy',
@@ -99,6 +104,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            style={{ y }}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Let's grab a coffee
@@ -144,6 +150,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.02 }}
             className="bg-navy-900/50 backdrop-blur-xl rounded-2xl p-8 border border-navy-800"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
