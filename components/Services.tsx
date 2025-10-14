@@ -9,12 +9,12 @@ export default function Services() {
       description: "Data-driven, customized solutions that position your brand as the industry leader. We analyze your audience and create strategies that drive engagement and growth.",
     },
     {
-      title: "Content Production",
-      description: "Video is the new language businesses must learn. We create compelling video content that tells your story and connects with your audience on an emotional level.",
+      title: "Video Production & Content",
+      description: "Our specialty. From concept to final cut, we craft scroll-stopping video content optimized for every platform. Professional production quality that captures attention and drives conversions.",
     },
     {
-      title: "Paid Advertising",
-      description: "Right ad, right audience, right platform. Our targeted advertising campaigns maximize your ROI and deliver measurable results across all major platforms.",
+      title: "AI-Powered Advertising",
+      description: "Leverage cutting-edge AI technology to optimize ad spend in real-time. Our machine learning algorithms continuously analyze performance data to maximize ROI and reduce wasted budget.",
     },
     {
       title: "Influencer Marketing",
@@ -23,9 +23,9 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 relative overflow-hidden">
       {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-navy-50/50 to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-900/20 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
@@ -35,10 +35,10 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-sm text-navy-600 uppercase tracking-widest mb-6 font-medium">
+          <h2 className="text-sm text-blue-400 uppercase tracking-widest mb-6 font-medium">
             The toolkit
           </h2>
-          <p className="text-4xl md:text-5xl font-bold text-gray-950 mb-6 leading-tight">
+          <p className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             What we offer
           </p>
         </motion.div>
@@ -52,15 +52,15 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="group p-10 rounded-2xl bg-white hover:bg-navy-50 transition-all border border-gray-200 hover:border-navy-300 shadow-sm hover:shadow-xl"
+              className="group p-10 rounded-2xl bg-gray-800 hover:bg-gray-750 transition-all border border-gray-700 hover:border-blue-500/50 shadow-sm hover:shadow-xl"
             >
-              <div className="w-12 h-12 rounded-lg bg-navy-100 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
-                <div className="w-6 h-6 bg-navy-600 group-hover:bg-white rounded transition-colors" />
+              <div className="w-12 h-12 rounded-lg bg-gray-700 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                <div className="w-6 h-6 bg-blue-500 group-hover:bg-white rounded transition-colors" />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-950 mb-4">
+              <h3 className="text-2xl font-semibold text-white mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

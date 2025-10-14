@@ -11,9 +11,9 @@ export default function ClientLogos() {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-gray-950">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <p className="text-center text-gray-400 text-xs uppercase tracking-widest mb-12">
+        <p className="text-center text-gray-500 text-xs uppercase tracking-widest mb-12">
           Trusted by industry leaders
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center">
@@ -29,8 +29,8 @@ export default function ClientLogos() {
                 className="h-12 w-auto object-contain opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
               /> */}
               {/* Temporary placeholder */}
-              <div className="flex items-center justify-center w-32 h-12 bg-gray-200 rounded-lg group-hover:bg-navy-100 transition-colors">
-                <span className="text-gray-400 text-xs font-semibold group-hover:text-navy-600 transition-colors">
+              <div className="flex items-center justify-center w-32 h-12 bg-gray-800 rounded-lg group-hover:bg-gray-700 transition-colors">
+                <span className="text-gray-400 text-xs font-semibold group-hover:text-gray-200 transition-colors">
                   {client.name}
                 </span>
               </div>
