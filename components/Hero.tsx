@@ -42,7 +42,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="#top" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Video/Image Placeholder */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-950/95 via-gray-950/90 to-navy-900/95 z-10" />

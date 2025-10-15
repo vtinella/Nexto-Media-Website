@@ -113,7 +113,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-4 text-white uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+                <Link href="#top" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
                   Home
                 </Link>
               </li>
@@ -142,11 +142,15 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h4 className="text-sm font-semibold mb-4 text-white uppercase tracking-wider">Contact Info</h4>
-            <div className="space-y-3">
-              <ContactButton type="email" variant="pill" className="w-full justify-start text-sm !px-0 !py-0 !bg-transparent !border-0 hover:!scale-100 hover:!text-blue-400" />
-              <ContactButton type="phone" variant="pill" className="w-full justify-start text-sm !px-0 !py-0 !bg-transparent !border-0 hover:!scale-100 hover:!text-blue-400" />
-              <p className="text-gray-400 text-sm">{process.env.NEXT_PUBLIC_COMPANY_ADDRESS_LINE1}</p>
-              <p className="text-gray-400 text-sm">{process.env.NEXT_PUBLIC_COMPANY_ADDRESS_LINE2}</p>
+            <div className="space-y-3 text-gray-400 text-sm">
+              <div>
+                <ContactButton type="email" variant="text" showIcon={false} />
+              </div>
+              <div>
+                <ContactButton type="phone" variant="text" showIcon={false} />
+              </div>
+              <p>{process.env.NEXT_PUBLIC_COMPANY_ADDRESS_LINE1}</p>
+              <p>{process.env.NEXT_PUBLIC_COMPANY_ADDRESS_LINE2}</p>
             </div>
           </motion.div>
         </div>

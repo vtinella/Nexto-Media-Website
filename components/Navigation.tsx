@@ -39,7 +39,7 @@ export default function Navigation() {
             <div className="px-6 lg:px-8">
               <div className="flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
-                  <Link href="/" className="text-lg font-semibold text-white tracking-tight">
+                  <Link href="/#top" className="text-lg font-semibold text-white tracking-tight">
                     Nexto Media
                   </Link>
                 </div>
@@ -47,25 +47,25 @@ export default function Navigation() {
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-1">
                   <Link
-                    href="/"
+                    href="/#top"
                     className="text-gray-300 hover:text-white px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-white/10"
                   >
                     Home
                   </Link>
                   <Link
-                    href="#projects"
+                    href="/#projects"
                     className="text-gray-300 hover:text-white px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-white/10"
                   >
                     Projects
                   </Link>
                   <Link
-                    href="#about"
+                    href="/#about"
                     className="text-gray-300 hover:text-white px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-white/10"
                   >
                     About
                   </Link>
                   <Link
-                    href="#contact"
+                    href="/#contact"
                     className="ml-4 bg-white text-black hover:bg-gray-200 px-6 py-2.5 rounded-lg text-sm font-medium transition-all"
                   >
                     Contact
@@ -109,28 +109,28 @@ export default function Navigation() {
         }`}>
           <nav className="flex flex-col items-center space-y-8">
             <Link
-              href="/"
+              href="/#top"
               onClick={() => setIsOpen(false)}
               className="text-white hover:text-blue-400 text-3xl font-semibold transition-all duration-300 hover:scale-110"
             >
               Home
             </Link>
             <Link
-              href="#projects"
+              href="/#projects"
               onClick={() => setIsOpen(false)}
               className="text-white hover:text-blue-400 text-3xl font-semibold transition-all duration-300 hover:scale-110"
             >
               Projects
             </Link>
             <Link
-              href="#about"
+              href="/#about"
               onClick={() => setIsOpen(false)}
               className="text-white hover:text-blue-400 text-3xl font-semibold transition-all duration-300 hover:scale-110"
             >
               About
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               onClick={() => setIsOpen(false)}
               className="mt-4 bg-white text-black hover:bg-blue-400 hover:text-white px-10 py-4 rounded-full text-xl font-semibold transition-all duration-300 hover:scale-110"
             >
@@ -140,7 +140,7 @@ export default function Navigation() {
 
           {/* Contact Info */}
           <div className="absolute bottom-12 left-0 right-0 flex justify-center">
-            <ContactButton type="email" variant="pill" className="text-sm" />
+            <ContactButton type="email" variant="text" className="text-gray-400 text-sm" showIcon={false} />
           </div>
         </div>
       </div>
