@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import ContactButton from './ContactButton';
 
@@ -32,15 +33,17 @@ export default function Navigation() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-8 pt-6">
-        <div className={`max-w-6xl mx-auto transition-all duration-300 ${
-          isScrolled ? 'shadow-xl shadow-navy-900/10' : ''
-        }`}>
-          <div className="bg-black/45 backdrop-blur-xl rounded-full border border-gray-800/50">
+        <div className="max-w-6xl mx-auto">
+          <div className={`bg-black/45 backdrop-blur-xl rounded-full border transition-all duration-300 ${
+            isScrolled
+              ? 'border-gray-700/70 shadow-[0_8px_30px_rgb(0,0,0,0.6)]'
+              : 'border-gray-800/50 shadow-[0_4px_20px_rgb(0,0,0,0.4)]'
+          }`}>
             <div className="px-6 lg:px-8">
               <div className="flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
                   <Link href="/#top" className="text-lg font-semibold text-white tracking-tight">
-                    Nexto Media
+                    <Image src="/logo.png" alt="Enkel Signering Logo" width={100} height={32} />
                   </Link>
                 </div>
 
